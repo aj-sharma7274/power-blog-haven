@@ -1,18 +1,18 @@
+
 import { useParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Calendar, Eye, User } from "lucide-react";
-import { Separator } from "@/components/ui/separator";
-import { Badge } from "@/components/ui/badge";
-import BlogCard from "@/components/BlogCard";
-import { Button } from "@/components/ui/button";
 import NewsletterSignup from "@/components/NewsletterSignup";
+import BlogPostHeader from "@/components/blog/BlogPostHeader";
+import BlogPostContent from "@/components/blog/BlogPostContent";
+import BlogSidebar from "@/components/blog/BlogSidebar";
+import { BlogPost, BlogResource } from "@/models/BlogPost";
 
 const BlogPostPage = () => {
   const { id } = useParams();
   
   // Custom blog post for the Blogger template conversion guide
-  const bloggerTemplatePost = {
+  const bloggerTemplatePost: BlogPost = {
     title: "Converting This Power Platform Blog to a Blogger Template",
     category: "Web Development",
     author: "PowerBlog Team",
@@ -491,6 +491,28 @@ const BlogPostPage = () => {
     `,
   };
 
+  // Blog resources for the sidebar
+  const blogResources: BlogResource[] = [
+    {
+      imageUrl: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+      title: "Blogger API Documentation",
+      link: "https://developers.google.com/blogger",
+      source: "Official Google Resource"
+    },
+    {
+      imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+      title: "Blogger Template Guide",
+      link: "https://support.google.com/blogger/answer/176245",
+      source: "Official Blogger Support"
+    },
+    {
+      imageUrl: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+      title: "XML Fundamentals for Templates",
+      link: "https://www.w3schools.com/xml/",
+      source: "W3Schools Tutorial"
+    }
+  ];
+
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
@@ -498,135 +520,20 @@ const BlogPostPage = () => {
         <div className="container py-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
-              <div>
-                <Badge className="mb-4 bg-blog-100 text-blog-800 hover:bg-blog-200">
-                  {bloggerTemplatePost.category}
-                </Badge>
-                <h1 className="text-3xl md:text-4xl font-bold mb-4">{bloggerTemplatePost.title}</h1>
-                
-                <div className="flex flex-wrap items-center gap-4 text-muted-foreground mb-8">
-                  <div className="flex items-center">
-                    <User size={18} className="mr-2" />
-                    <span>{bloggerTemplatePost.author}</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Calendar size={18} className="mr-2" />
-                    <span>{bloggerTemplatePost.date}</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Eye size={18} className="mr-2" />
-                    <span>{bloggerTemplatePost.views} views</span>
-                  </div>
-                </div>
-                
-                <div className="mb-8">
-                  <img
-                    src={bloggerTemplatePost.imageUrl}
-                    alt={bloggerTemplatePost.title}
-                    className="w-full h-auto rounded-lg"
-                  />
-                </div>
-                
-                <div 
-                  className="blog-content prose max-w-none"
-                  dangerouslySetInnerHTML={{ __html: bloggerTemplatePost.content }}
-                />
-                
-                <Separator className="my-8" />
-                
-                <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                  <span>Share this article:</span>
-                  <div className="flex gap-2">
-                    <Button variant="outline" size="sm">
-                      Facebook
-                    </Button>
-                    <Button variant="outline" size="sm">
-                      Twitter
-                    </Button>
-                    <Button variant="outline" size="sm">
-                      LinkedIn
-                    </Button>
-                  </div>
-                </div>
-              </div>
+              <BlogPostHeader 
+                title={bloggerTemplatePost.title}
+                category={bloggerTemplatePost.category}
+                author={bloggerTemplatePost.author}
+                date={bloggerTemplatePost.date}
+                views={bloggerTemplatePost.views}
+                imageUrl={bloggerTemplatePost.imageUrl}
+              />
+              
+              <BlogPostContent content={bloggerTemplatePost.content} />
             </div>
             
             <div>
-              <div className="bg-gray-50 p-6 rounded-lg sticky top-20">
-                <h2 className="text-xl font-bold mb-4">More Resources</h2>
-                <div className="space-y-6">
-                  <div className="flex gap-3">
-                    <img
-                      src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
-                      alt="Blogger API Documentation"
-                      className="h-16 w-16 rounded-md object-cover"
-                    />
-                    <div>
-                      <h3 className="font-medium line-clamp-2">
-                        <a 
-                          href="https://developers.google.com/blogger" 
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:text-power-600 transition-colors"
-                        >
-                          Blogger API Documentation
-                        </a>
-                      </h3>
-                      <div className="flex items-center gap-2 mt-1 text-xs text-muted-foreground">
-                        <span>Official Google Resource</span>
-                      </div>
-                    </div>
-                  </div>
-                  <Separator />
-                  
-                  <div className="flex gap-3">
-                    <img
-                      src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
-                      alt="Blogger Template Guide"
-                      className="h-16 w-16 rounded-md object-cover"
-                    />
-                    <div>
-                      <h3 className="font-medium line-clamp-2">
-                        <a 
-                          href="https://support.google.com/blogger/answer/176245"
-                          target="_blank"
-                          rel="noopener noreferrer" 
-                          className="hover:text-power-600 transition-colors"
-                        >
-                          Blogger Template Guide
-                        </a>
-                      </h3>
-                      <div className="flex items-center gap-2 mt-1 text-xs text-muted-foreground">
-                        <span>Official Blogger Support</span>
-                      </div>
-                    </div>
-                  </div>
-                  <Separator />
-                  
-                  <div className="flex gap-3">
-                    <img
-                      src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
-                      alt="XML Fundamentals"
-                      className="h-16 w-16 rounded-md object-cover"
-                    />
-                    <div>
-                      <h3 className="font-medium line-clamp-2">
-                        <a 
-                          href="https://www.w3schools.com/xml/" 
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:text-power-600 transition-colors"
-                        >
-                          XML Fundamentals for Templates
-                        </a>
-                      </h3>
-                      <div className="flex items-center gap-2 mt-1 text-xs text-muted-foreground">
-                        <span>W3Schools Tutorial</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <BlogSidebar resources={blogResources} />
             </div>
           </div>
         </div>
