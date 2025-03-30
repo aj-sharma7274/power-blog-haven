@@ -11,6 +11,25 @@ export interface TechItem {
 }
 
 const TechCard = ({ tech }: { tech: TechItem }) => {
+  // Special case for Blogger template
+  if (tech.id === "blogger") {
+    return (
+      <Link to="/blogger-template">
+        <Card className="overflow-hidden h-full hover:shadow-md transition-all border-t-4" 
+          style={{ borderTopColor: tech.color }}>
+          <CardContent className="pt-6">
+            <div className="mb-4">
+              <img src={tech.icon} alt={tech.title} className="h-12 w-12" />
+            </div>
+            <h3 className="text-xl font-bold mb-2">{tech.title}</h3>
+            <p className="text-muted-foreground">{tech.description}</p>
+          </CardContent>
+        </Card>
+      </Link>
+    );
+  }
+  
+  // Default case for regular tech cards
   return (
     <Link to={`/blog?category=${tech.id}`}>
       <Card className="overflow-hidden h-full hover:shadow-md transition-all border-t-4" 

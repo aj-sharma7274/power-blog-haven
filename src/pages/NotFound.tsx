@@ -15,9 +15,14 @@ const NotFound = () => {
           <p className="text-lg text-muted-foreground max-w-md mx-auto mb-8">
             The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
           </p>
-          <Button asChild size="lg">
-            <Link to="/">Return to Home</Link>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild size="lg">
+              <Link to="/">Return to Home</Link>
+            </Button>
+            <Button asChild variant="outline" size="lg">
+              <Link to="/blogger-template">Get Blogger Template</Link>
+            </Button>
+          </div>
         </div>
       </main>
       <Footer />

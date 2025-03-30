@@ -10,6 +10,7 @@ import BlogPostPage from "./pages/BlogPostPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import NotFound from "./pages/NotFound";
+import BloggerTemplate from "./components/BloggerTemplate";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/blog/:id" element={<BlogPostPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/blogger-template" element={<BloggerTemplate />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
