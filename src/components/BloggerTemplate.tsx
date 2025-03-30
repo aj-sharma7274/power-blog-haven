@@ -1,8 +1,8 @@
-
 import React, { useEffect, useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Download } from "lucide-react";
+import { toast } from "sonner";
 
 const BloggerTemplate = () => {
   const [templateCode, setTemplateCode] = useState('');
@@ -25,7 +25,7 @@ const BloggerTemplate = () => {
   <!-- CSS Styles -->
   <style>
     /* Import fonts */
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:wght@300;400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Merriweather:wght@300;400;700&amp;display=swap');
     
     /* Base styles */
     body {
@@ -697,6 +697,11 @@ const BloggerTemplate = () => {
     // Clean up
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
+
+    // Show success toast
+    toast.success("Template downloaded successfully", {
+      description: "You can now import this file into your Blogger dashboard."
+    });
   };
 
   return (
@@ -720,6 +725,15 @@ const BloggerTemplate = () => {
             <li>Copy all content and paste it into the Blogger HTML editor</li>
             <li>Click "Save" to apply the template</li>
           </ol>
+          
+          <div className="mt-6 p-4 bg-amber-50 border border-amber-200 rounded-md">
+            <h3 className="text-amber-800 font-medium mb-2">Troubleshooting XML Errors</h3>
+            <p className="text-amber-700">
+              If you encounter XML errors when importing, check that all special characters in the template 
+              are properly escaped. In XML, special characters like &amp;, &lt;, and &gt; must be written as 
+              &amp;amp;, &amp;lt;, and &amp;gt;.
+            </p>
+          </div>
         </CardContent>
       </Card>
       
