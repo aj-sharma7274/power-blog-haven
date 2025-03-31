@@ -1,0 +1,22 @@
+
+{
+  "name": "power-blog-haven-template",
+  "version": "1.0.0",
+  "description": "HTML template for Power Blog Haven",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve"
+  },
+  "keywords": [
+    "blog",
+    "template",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Power Blog Haven",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}

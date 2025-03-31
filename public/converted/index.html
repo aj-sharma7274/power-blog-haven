@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Post Content</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Power Blog Haven</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <article>
+        <div class="blog-header">
+          <span class="category">Power Apps</span>
+          <h1 class="title">Getting Started with Power Apps: A Beginner's Guide</h1>
+          
+          <div class="meta-info">
+            <div class="meta-item">
+              <span class="icon">👤</span>
+              <span>Sarah Johnson</span>
+            </div>
+            <div class="meta-item">
+              <span class="icon">📅</span>
+              <span>June 15, 2023</span>
+            </div>
+            <div class="meta-item">
+              <span class="icon">👁️</span>
+              <span>1,245 views</span>
+            </div>
+          </div>
+          
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+               alt="Power Apps on device" class="featured-image">
+        </div>
+
+        <div id="blog-content" class="blog-content">
+          <!-- Blog content will be inserted here -->
+          <p>Power Apps is a suite of apps, services, and connectors, as well as a data platform, that provides a rapid development environment to build custom apps for your business needs. Using Power Apps, you can quickly build custom business apps that connect to your data stored either in the underlying data platform (Microsoft Dataverse) or in various online and on-premises data sources.</p>
+          
+          <h2>Benefits of Power Apps</h2>
+          <ul>
+            <li>Build apps quickly with a visual designer</li>
+            <li>Connect to your data easily</li>
+            <li>Publish instantly to web and mobile</li>
+            <li>Customize apps to match your business needs</li>
+          </ul>
+          
+          <h2>Getting Started</h2>
+          <p>To get started with Power Apps, you'll need a Microsoft 365 subscription or a Power Apps license. Once you have access, you can start creating apps using the web-based Power Apps Studio.</p>
+          
+          <h3>Creating Your First App</h3>
+          <p>Power Apps offers several ways to create apps:</p>
+          <ol>
+            <li>Start from a template</li>
+            <li>Start from data (e.g., SharePoint list, Excel file)</li>
+            <li>Start from scratch with a blank canvas</li>
+          </ol>
+          
+          <p>For beginners, starting from a template or from your data is the easiest way to get familiar with the platform.</p>
+        </div>
+        
+        <hr class="separator">
+        
+        <div class="share-section">
+          <span>Share this article:</span>
+          <div class="share-buttons">
+            <button class="share-button" data-platform="facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+              Facebook
+            </button>
+            <button class="share-button" data-platform="twitter">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter">
+                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+              </svg>
+              Twitter
+            </button>
+            <button class="share-button" data-platform="linkedin">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+              LinkedIn
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <aside class="sidebar">
+        <div class="sidebar-content">
+          <h2>More Resources</h2>
+          <div class="resource-list">
+            <div class="resource-item">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1415&q=80" alt="Power Automate">
+              <div>
+                <h3><a href="#">Getting Started with Power Automate</a></h3>
+                <span>Microsoft Docs</span>
+              </div>
+            </div>
+            <div class="resource-item">
+              <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Power BI">
+              <div>
+                <h3><a href="#">Power BI: Data Visualization Made Easy</a></h3>
+                <span>Power Platform Blog</span>
+              </div>
+            </div>
+            <div class="resource-item">
+              <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Power Pages">
+              <div>
+                <h3><a href="#">Building Your First Power Pages Site</a></h3>
+                <span>YouTube Tutorial</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <section class="newsletter">
+      <div class="newsletter-content">
+        <h2>Subscribe to Our Newsletter</h2>
+        <p>Get the latest Power Platform tips and tutorials delivered to your inbox.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>PowerBlog</h3>
+          <p>The ultimate resource for Power Platform enthusiasts. Tutorials, tips, and insights to help you build better solutions.</p>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook">📱</a>
+            <a href="#" aria-label="Twitter">💬</a>
+            <a href="#" aria-label="LinkedIn">📇</a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Categories</h3>
+          <ul>
+            <li><a href="#">Power Apps</a></li>
+            <li><a href="#">Power Automate</a></li>
+            <li><a href="#">Power BI</a></li>
+            <li><a href="#">Power Pages</a></li>
+            <li><a href="#">Dataverse</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <ul class="contact-info">
+            <li>📧 hello@powerblog.com</li>
+            <li>📞 +1 (555) 123-4567</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>&copy; <span id="current-year"></span> PowerBlog. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <div id="toast" class="toast">
+    <span id="toast-message"></span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
